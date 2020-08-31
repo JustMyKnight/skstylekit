@@ -26,20 +26,20 @@ open class SKSwitch: UISwitch {
     @IBInspectable open var styleName: String? {
         
         get {
-            return style?.name
+            return skStyle?.name
         }
         
         set {
-            style = StyleKit.style(withName: newValue)
+            skStyle = StyleKit.style(withName: newValue)
         }
     }
     
-    open var style: SKStyle? {
+    open var skStyle: SKStyle? {
         
         didSet {
             
-            if oldValue != style {
-                style?.apply(switchControl: self)
+            if oldValue != skStyle {
+                skStyle?.apply(switchControl: self)
             }
         }
     }
